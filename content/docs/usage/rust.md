@@ -1,7 +1,6 @@
 ---
 title: "Core Rust library"
-description: "How to use it with Rust."
-lead: "How to use it with Rust."
+lead: "How to use RillRate in Rust applications."
 date: 2020-11-12T13:26:54+01:00
 lastmod: 2020-11-12T13:26:54+01:00
 draft: false
