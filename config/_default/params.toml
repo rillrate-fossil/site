@@ -1,0 +1,47 @@
+# Meta Data for SEO
+
+## Homepage
+title = "RillRate"
+titleSeparator = "-"
+titleAddition = "RillRate Guide"
+description = "RillRate is the dynamic tracing system that tends to be real-time. This is an official guide about using it in your apps."
+
+## Open Graph + Twitter Cards
+images = ["doks.png"]
+#twitterSite = "henkverlinde"
+#twitterCreator = "henkverlinde"
+#facebookAuthor = "verlinde.henk"
+#facebookPublis-er = "verlinde.henk"
+ogLocale = "en_US"
+
+## JSON-LD
+schemaType = "Organization"
+schemaLogo = "logo-doks.png"
+#schemaTwitter = "https://twitter.com/henkverlinde"
+#schemaLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
+schemaGitHub = "https://github.com/rillrate"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = false
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+
+# Footer
+footer = "© 2021 RillRate OÜ"
+
+# Alert
+alert = false
+alertText = "Like RillRate? <a class=\"alert-link\" href=\"https://github.com/rillrate/rillrate\">Star on GitHub</a>. Thanks!</a>"
+
+# Edit Page
+docsRepo = "https://github.com/rillrate/rillrate"
+editPage = false
