@@ -17,6 +17,11 @@
   url = "/docs/export/"
 
 [[main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[main]]
   name = "Docs"
   url = "/docs/basics/intro/"
   weight = 10
