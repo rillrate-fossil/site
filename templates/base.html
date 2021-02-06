@@ -1,15 +1,28 @@
+
 <!doctype html>
-<html lang="{{ lang | default(value="en") }}">
-    {% block head %}
-    {% endblock %}
-    <body>
-        {% block header %}
-        {% endblock %}
-        <div class="wrap container" role="document">
-            <div class="content">
-                {% block main %}
-                {% endblock %}
-            </div>
-        </div>
-    </body>
+<html lang="en-US">
+
+  {% block head %}{% include "head.html" %}{% endblock %}
+
+  <body class="home">
+    <div class="header-bar fixed-top"></div>
+
+  {% block header %}{% include "header.html" %}{% endblock %}
+
+  {% block main %}{{ section.content }}{% endblock %}
+
+  <section class="section section-sm container-fluid">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-9"></div>
+    </div>
+  </section>
+
+  {% block footer %}{% include "footer.html" %}{% endblock %}
+
+  <!--
+  <script src="/main.js" defer></script>
+  <script src="/index.js" defer></script>
+  -->
+
+  </body>
 </html>
