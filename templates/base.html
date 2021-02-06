@@ -4,18 +4,18 @@
 
   {% block head %}{% include "head.html" %}{% endblock %}
 
-  <body class="home">
+  {% if page is defined -%}
+    {% set class = "docs single" -%}
+  {% elif section is defined -%}
+    {% set class = "home" -%}
+  {% endif -%}
+
+  <body class="{{ class }}">
     <div class="header-bar fixed-top"></div>
 
   {% block header %}{% include "header.html" %}{% endblock %}
 
   {% block main %}{{ section.content }}{% endblock %}
-
-  <section class="section section-sm container-fluid">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-9"></div>
-    </div>
-  </section>
 
   {% block footer %}{% include "footer.html" %}{% endblock %}
 

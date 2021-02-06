@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="wrap container" role="document">
+      <div class="content">
+
+    <div class="row flex-xl-nowrap">
+        <div class="col-lg-5 col-xl-4 docs-sidebar">
+            <nav class="docs-links" aria-label="Main navigation">
+                <h3>Basics</h3>
+  <ul class="list-unstyled">
+    <li><a class="docs-link active" href="//localhost:1313/docs/basics/intro/">Introduction</a></li>
+    </ul>
+  <h3>Usage</h3>
+  <ul class="list-unstyled">
+    <li><a class="docs-link" href="//localhost:1313/docs/usage/rust/">Core Rust library</a></li>
+    <li><a class="docs-link" href="//localhost:1313/docs/usage/python/">Python bindings</a></li>
+    <li><a class="docs-link" href="//localhost:1313/docs/usage/node/">Node.js bindings</a></li>
+    </ul>
+  <h3>Exporting</h3>
+  <ul class="list-unstyled">
+    <li><a class="docs-link" href="//localhost:1313/docs/export/config/">Standalone Server</a></li>
+    </ul>
+
+            </nav>
+        </div>
+        <nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+            <div class="page-links">
+    <h3>On this page</h3>
+    <nav id="TableOfContents"></nav>
+  </div>
+
+        </nav>
+        <main class="docs-content col-lg-11 col-xl-9">
+            <h1>{{ page.title }}</h1>
+            <p class="lead"></p>
+            {{ page.content | safe }}
+
+            <div class="docs-navigation d-flex justify-content-between">
+
+    <a class="ml-auto" href="//localhost:1313/docs/export/config/">
+            <div class="card my-1">
+                <div class="card-body py-2">
+                    Standalone Server &rarr;
+                </div>
+            </div>
+        </a>
+    </div>
+
+        </main>
+    </div>
+
+      </div>
+    </div>
+{% endblock %}
