@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ lang | default(value="en") }}">
+    {% block head %}
+    {% endblock %}
+    <body>
+        {% block header %}
+        {% endblock %}
+        <div class="wrap container" role="document">
+            <div class="content">
+                {% block main %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
