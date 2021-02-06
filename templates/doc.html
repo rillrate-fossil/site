@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
+
 <div class="wrap container" role="document">
     <div class="content">
 
@@ -9,17 +10,17 @@
                 <nav class="docs-links" aria-label="Main navigation">
                     <h3>Basics</h3>
                     <ul class="list-unstyled">
-                        <li><a class="docs-link active" href="//localhost:1313/docs/basics/intro/">Introduction</a></li>
+                        <li><a class="docs-link active" href="/docs/basics/intro/">Introduction</a></li>
                     </ul>
                     <h3>Usage</h3>
                     <ul class="list-unstyled">
-                        <li><a class="docs-link" href="//localhost:1313/docs/usage/rust/">Core Rust library</a></li>
-                        <li><a class="docs-link" href="//localhost:1313/docs/usage/python/">Python bindings</a></li>
-                        <li><a class="docs-link" href="//localhost:1313/docs/usage/node/">Node.js bindings</a></li>
+                        <li><a class="docs-link" href="/docs/usage/rust/">Core Rust library</a></li>
+                        <li><a class="docs-link" href="/docs/usage/python/">Python bindings</a></li>
+                        <li><a class="docs-link" href="/docs/usage/node/">Node.js bindings</a></li>
                     </ul>
                     <h3>Exporting</h3>
                     <ul class="list-unstyled">
-                        <li><a class="docs-link" href="//localhost:1313/docs/export/config/">Standalone Server</a></li>
+                        <li><a class="docs-link" href="/docs/export/config/">Standalone Server</a></li>
                     </ul>
 
                 </nav>
@@ -27,7 +28,22 @@
             <nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
                 <div class="page-links">
                     <h3>On this page</h3>
-                    <nav id="TableOfContents"></nav>
+                    <nav id="TableOfContents">
+                        <ul>
+                            {% for h1 in page.toc %}
+                                <li>
+                                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                                    {% if h1.children %}
+                                        <ul>
+                                            {% for h2 in h1.children %}
+                                                <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
                 </div>
 
             </nav>
@@ -38,7 +54,7 @@
 
                 <div class="docs-navigation d-flex justify-content-between">
 
-                    <a class="ml-auto" href="//localhost:1313/docs/export/config/">
+                    <a class="ml-auto" href="/docs/export/config/">
                         <div class="card my-1">
                             <div class="card-body py-2">
                                 Standalone Server &rarr;
