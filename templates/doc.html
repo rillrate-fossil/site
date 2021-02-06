@@ -8,7 +8,7 @@
         <div class="row flex-xl-nowrap">
             <div class="col-lg-5 col-xl-4 docs-sidebar">
                 <nav class="docs-links" aria-label="Main navigation">
-                    <h3>Basics</h3>
+                    <h3><a class="docs-link" href="#asdf">Basics</a></h3>
                     <ul class="list-unstyled">
                         <li><a class="docs-link active" href="/docs/basics/intro/">Introduction</a></li>
                     </ul>
@@ -53,23 +53,58 @@
                 {{ page.content | safe }}
 
                 <div class="docs-navigation d-flex justify-content-between">
+                    {% set prevx = "skip" %}
                     {% if page.lighter %}
-                    <a href="{{ page.lighter.permalink }}">
+                        {% set_global prevx = page.lighter %}
+                    {% else %}
+                        {% set parent_section = get_section(path=page.ancestors | last) %}
+                        {% set index = get_section(path=parent_section.ancestors | last) %}
+                        {% set found_current = false %}
+                        {% for s in index.subsections | reverse %}
+                            {% set subsection = get_section(path=s) %}
+                            {% if subsection.permalink == parent_section.permalink %}
+                                {% set_global found_current = true %}
+                            {% elif found_current %}
+                                {% set_global prevx = subsection.pages | last %}
+                                {% break %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if prevx != "skip" %}
+                    <a href="{{ prevx.permalink }}">
                         <div class="card my-1">
                             <div class="card-body py-2">
-                                    &larr; {{ page.lighter.title }}
+                                    &larr; {{ prevx.title }}
                             </div>
                         </div>
                     </a>
                     {% endif %}
+
+                    {% set nextx = "skip" %}
                     {% if page.heavier %}
-                        <a class="ms-auto" href="{{ page.heavier.permalink }}">
-                            <div class="card my-1">
-                                <div class="card-body py-2">
-                                    {{ page.heavier.title }} &rarr;
-                                </div>
+                        {% set_global nextx = page.heavier %}
+                    {% else %}
+                        {% set parent_section = get_section(path=page.ancestors | last) %}
+                        {% set index = get_section(path=parent_section.ancestors | last) %}
+                        {% set found_current = false %}
+                        {% for s in index.subsections %}
+                            {% set subsection = get_section(path=s) %}
+                            {% if subsection.permalink == parent_section.permalink %}
+                                {% set_global found_current = true %}
+                            {% elif found_current %}
+                                {% set_global nextx = subsection.pages | first %}
+                                {% break %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if nextx != "skip" %}
+                    <a class="ms-auto" href="{{ nextx.permalink }}">
+                        <div class="card my-1">
+                            <div class="card-body py-2">
+                                {{ nextx.title }} &rarr;
                             </div>
-                        </a>
+                        </div>
+                    </a>
                     {% endif %}
                 </div>
 
