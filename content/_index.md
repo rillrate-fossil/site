@@ -1,3 +1,4 @@
 +++
-template = "index.html"
+template = "landing.html"
+weight = 1
 +++

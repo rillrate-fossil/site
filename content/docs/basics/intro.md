@@ -1,6 +1,7 @@
 +++
 title = "Introduction"
 template = "doc.html"
+weight = 1
 +++
 
 > *"One measurement is worth a thousand expert opinions."* -- Donald Sutherland

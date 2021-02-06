@@ -1,6 +1,7 @@
 +++
 title = "Core Rust library"
 template = "doc.html"
+weight = 1
 +++
 
 **RillRate** is available as Rust crate [here](https://crates.io/crates/rillrate).

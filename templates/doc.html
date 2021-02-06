@@ -53,14 +53,24 @@
                 {{ page.content | safe }}
 
                 <div class="docs-navigation d-flex justify-content-between">
-
-                    <a class="ml-auto" href="/docs/export/config/">
+                    {% if page.lighter %}
+                    <a href="{{ page.lighter.permalink }}">
                         <div class="card my-1">
                             <div class="card-body py-2">
-                                Standalone Server &rarr;
+                                    &larr; {{ page.lighter.title }}
                             </div>
                         </div>
                     </a>
+                    {% endif %}
+                    {% if page.heavier %}
+                        <a class="ms-auto" href="{{ page.heavier.permalink }}">
+                            <div class="card my-1">
+                                <div class="card-body py-2">
+                                    {{ page.heavier.title }} &rarr;
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
                 </div>
 
             </main>

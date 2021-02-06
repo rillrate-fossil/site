@@ -1,6 +1,7 @@
 +++
 title = "Standalone Server"
 template = "doc.html"
+weight = 1
 +++
 
 **RillRate** library bundled with a standalone server that provides a dashboard

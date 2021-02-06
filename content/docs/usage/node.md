@@ -1,6 +1,7 @@
 +++
 title = "Node.js bindings"
 template = "doc.html"
+weight = 3
 +++
 
 **RillRate** is available for Node.js [here](https://www.npmjs.com/package/@rillrate/rillrate).

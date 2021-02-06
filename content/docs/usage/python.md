@@ -1,6 +1,7 @@
 +++
 title = "Python bindings"
 template = "doc.html"
+weight = 2
 +++
 
 **RillRate** is available for Python [here](https://pypi.org/project/rillrate/).
