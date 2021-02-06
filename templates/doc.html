@@ -8,20 +8,21 @@
         <div class="row flex-xl-nowrap">
             <div class="col-lg-5 col-xl-4 docs-sidebar">
                 <nav class="docs-links" aria-label="Main navigation">
-                    <h3><a class="docs-link" href="#asdf">Basics</a></h3>
-                    <ul class="list-unstyled">
-                        <li><a class="docs-link active" href="/docs/basics/intro/">Introduction</a></li>
-                    </ul>
-                    <h3>Usage</h3>
-                    <ul class="list-unstyled">
-                        <li><a class="docs-link" href="/docs/usage/rust/">Core Rust library</a></li>
-                        <li><a class="docs-link" href="/docs/usage/python/">Python bindings</a></li>
-                        <li><a class="docs-link" href="/docs/usage/node/">Node.js bindings</a></li>
-                    </ul>
-                    <h3>Exporting</h3>
-                    <ul class="list-unstyled">
-                        <li><a class="docs-link" href="/docs/export/config/">Standalone Server</a></li>
-                    </ul>
+                    {% set parent_section = get_section(path=page.ancestors | last) %}
+                    {% set index = get_section(path=parent_section.ancestors | last) %}
+                    {% for s in index.subsections %}
+                        {% set subsection = get_section(path=s) %}
+                        <h3><a class="docs-link" href="{{ subsection.permalink }}">{{ subsection.title }}</a></h3>
+                        <ul class="list-unstyled">
+                        {% for p in subsection.pages %}
+                            {% if page.permalink == p.permalink %}
+                                <li><a class="docs-link active" href="{{ p.permalink }}">{{ p.title }}</a></li>
+                            {% else %}
+                                <li><a class="docs-link" href="{{ p.permalink }}">{{ p.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                    {% endfor %}
 
                 </nav>
             </div>
