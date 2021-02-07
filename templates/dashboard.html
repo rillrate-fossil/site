@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block header %}
+<!--<header class="navbar fixed-top d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">-->
+<header class="navbar fixed-top navbar-expand-md navbar-light p-2 mb-3 shadow-sm">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="/">RillRate</a>
+  <nav class="ms-auto my-2 my-md-0 me-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="#">Sign up</a>
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main class="container-fluid">
+    <div class="row">
+        <div class="col-5">
+            <div class="card shadow-sm">
+                  <div class="card-header py-1 px-2 fs-6">
+                      my.stream.10
+                  </div>
+                  <div class="card-body">
+                      <canvas></canvas>
+                  </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
