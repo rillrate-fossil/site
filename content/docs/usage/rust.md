@@ -19,7 +19,9 @@ You can do it using the following command:
 cargo add -s rillrate
 ```
 
-> `-s` flags keep your dependencies list sorted. Skip this flag if you have own order of dependencies.
+<div class="alert alert-info" role="alert">
+<code>-s</code> flags keep your dependencies list sorted. Skip this flag if you have own order of dependencies.
+</div>
 
 You can also add it directly to `[dependencies]` section of your `Cargo.toml` file:
 
@@ -28,7 +30,9 @@ You can also add it directly to `[dependencies]` section of your `Cargo.toml` fi
 rillrate = "*"
 ```
 
-> Replace asterisk with an actual version of the library. Or the sepcific one that you want to use.
+<div class="alert alert-info" role="alert">
+Replace asterisk with an actual version of the library. Or the sepcific one that you want to use.
+</div>
 
 ## Activating a provider
 
@@ -50,11 +54,11 @@ the tracer will be registered in the shared space where tracers can get it to re
 Also as you can see we keep the instance of `RillRate` tracer, because the worker is alive when
 the instance of the tracer exists and gracefully terminates all routines when the instance dropped.
 
-:::note
-Remember that `RillRate` instance can block the thread for a tiny interval while all routines
+<div class="alert alert-warning" role="alert">
+Remember that <code>RillRate</code> instance can block the thread for a tiny interval while all routines
 completely terminated. It's important to deliver all metrics even if you want to shutdown
 the application.
-:::
+</div>
 
 ### Provider
 
@@ -159,15 +163,13 @@ Increments an internal counter with the provided delta that can't be negative.
 
 `Logger` represents an ordinary logger with a single level.
 
-:::tip
 `Logger` has only one level of logging. If you want to have multiple levels you
 should create multiple loggers and separate them by name. For example if you want
 to write logs for module *my.module.log* in three levels `info`, `warn` and `error` you
 can create three loggers with corresponding paths: *my.module.log.info*,
 *my.module.log.warn* and *my.module.log.error*.
 
-The beniefit of this approaach is that you can activate any level absolutely separately.
-:::
+The beniefit of this approach is that you can activate any level absolutely separately.
 
 ```rust
 use rillrate::Logger;

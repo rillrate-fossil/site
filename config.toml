@@ -4,4 +4,8 @@ compile_sass = true
 highlight_code = true
 build_search_index = true
 
+[markdown]
+render_emoji = true
+smart_punctuation = true
+
 [extra]
