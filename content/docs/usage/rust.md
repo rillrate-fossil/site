@@ -19,9 +19,7 @@ You can do it using the following command:
 cargo add -s rillrate
 ```
 
-<div class="alert alert-info" role="alert">
-<code>-s</code> flags keep your dependencies list sorted. Skip this flag if you have own order of dependencies.
-</div>
+**Note:** `-s` flags keep your dependencies list sorted. Skip this flag if you have own order of dependencies.
 
 You can also add it directly to `[dependencies]` section of your `Cargo.toml` file:
 
@@ -30,9 +28,7 @@ You can also add it directly to `[dependencies]` section of your `Cargo.toml` fi
 rillrate = "*"
 ```
 
-<div class="alert alert-info" role="alert">
-Replace asterisk with an actual version of the library. Or the sepcific one that you want to use.
-</div>
+**Note:** Replace asterisk with an actual version of the library. Or the sepcific one that you want to use.
 
 ## Activating a provider
 
@@ -54,11 +50,9 @@ the tracer will be registered in the shared space where tracers can get it to re
 Also as you can see we keep the instance of `RillRate` tracer, because the worker is alive when
 the instance of the tracer exists and gracefully terminates all routines when the instance dropped.
 
-<div class="alert alert-warning" role="alert">
-Remember that <code>RillRate</code> instance can block the thread for a tiny interval while all routines
+**Note:** Remember that `RillRate` instance can block the thread for a tiny interval while all routines
 completely terminated. It's important to deliver all metrics even if you want to shutdown
 the application.
-</div>
 
 ### Provider
 
