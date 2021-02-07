@@ -51,7 +51,7 @@
             <main class="docs-content col-lg-11 col-xl-9">
                 <h1>{{ page.title }}</h1>
                 <p class="lead"></p>
-                {{ page.content | safe }}
+                {{ page.content | replace(from="<table>", to="<table class=table>") | safe }}
 
                 <div class="docs-navigation d-flex justify-content-between">
                     {% set prevx = "skip" %}
