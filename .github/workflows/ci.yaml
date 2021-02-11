@@ -11,8 +11,8 @@ jobs:
     - name: shalzz/zola-deploy-action
       uses: shalzz/zola-deploy-action@master
       env:
-        REPOSITORY: rillrate/rillrate.github.io
-        PAGES_BRANCH: master
+        #REPOSITORY: rillrate/rillrate.github.io
+        PAGES_BRANCH: rendered
         #BUILD_DIR: docs
         #BUILD_FLAGS: --drafts
         TOKEN: ${{ secrets.TOKEN }}
