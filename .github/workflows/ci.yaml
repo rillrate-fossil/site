@@ -1,0 +1,18 @@
+on: push
+
+name: Build and deploy on push
+
+jobs:
+  build:
+    name: Deployment
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: shalzz/zola-deploy-action
+      uses: shalzz/zola-deploy-action@master
+      env:
+        REPOSITORY: rillrate/rillrate.github.io
+        PAGES_BRANCH: master
+        #BUILD_DIR: docs
+        #BUILD_FLAGS: --drafts
+        TOKEN: ${{ secrets.TOKEN }}
