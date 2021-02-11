@@ -1,5 +1,5 @@
 title = "RillRate"
-base_url = "https://rillrate.com"
+base_url = "https://docs.rillrate.com"
 compile_sass = true
 highlight_code = true
 build_search_index = true
