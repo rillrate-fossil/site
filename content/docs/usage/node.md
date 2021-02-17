@@ -34,7 +34,7 @@ Every `Tracer` has methods that you can use to explore some conditions and prope
 
 #### Methods
 
-##### `is_active()` -> bool
+##### `is_active() -> bool`
 
 Returns `true` is the `Tracer` is active or `false` if it's not active.
 

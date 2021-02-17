@@ -60,7 +60,7 @@ the application.
 
 #### Methods
 
-##### `from_env(name: &str)` -> RillRate
+##### `from_env(name: &str) -> RillRate`
 
 Spawns a new instance of a `Provider`.
 
@@ -85,12 +85,12 @@ Every `Tracer` has methods that you can use to explore some conditions and prope
 
 #### Methods
 
-##### `is_active(&self)` -> bool
+##### `is_active(&self) -> bool`
 
 Returns `true` is the `Tracer` is active. If a `Tracer` is `active` than it always
 returns `true`.
 
-##### `path(&self)` -> &Path
+##### `path(&self) -> &Path`
 
 Return a reference to a parsed `Path` of the `Tracer`.
 
