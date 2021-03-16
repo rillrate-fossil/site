@@ -44,7 +44,7 @@ Returns `true` is the `Tracer` is active or `false` if it's not active.
 
 ### Counter
 
-`Counter` increments values only.
+`Counter` increments values.
 
 ```python
 counter = rillrate.Counter("my.counter")
@@ -65,7 +65,7 @@ Increments an internal counter with the provided delta that can't be negative.
 
 ```python
 gauge = rillrate.Gauge("my.gauge")
-gauge.inc(1.0)
+gauge.set(1.0)
 ```
 
 #### Methods
@@ -78,7 +78,7 @@ Set the value.
 
 ### Pulse
 
-To create `Pulse` call it as a construction with a `Path`:
+`Pulse` is a frame of values.
 
 ```python
 pulse = rillrate.Pulse("my.pulse")
@@ -123,21 +123,21 @@ Add the value to the corresponding bucket.
 `Dict` represents of the table of key-pair values.
 
 ```python
-dict = rillrate.Dict("my.dict", [10, 20, 50, 100, 500])
-dict.add(128.0)
+dict = rillrate.Dict("my.dict")
+dict.set("key-1", "value-1")
 ```
 
 #### Methods
 
 ##### `set(key, value)`
 
-Assing a value to the provided key.
+Assing a value with the provided key.
 
 
 
 ### Logger
 
-To create `Logger` call it as a construction with a `Path`:
+`Logger` writes text messages with a timestamp.
 
 ```python
 logger = rillrate.Logger("my.logger")
