@@ -24,6 +24,8 @@ import rillrate
 rillrate.install()
 ```
 
+
+
 ## Using tracers
 
 All rillrate tracers available in Python binding.
@@ -38,13 +40,49 @@ Every `Tracer` has methods that you can use to explore some conditions and prope
 
 Returns `true` is the `Tracer` is active or `false` if it's not active.
 
+
+
+### Counter
+
+`Counter` increments values only.
+
+```python
+counter = rillrate.Counter("my.counter")
+counter.inc(1.0)
+```
+
+#### Methods
+
+##### `inc(delta)`
+
+Increments an internal counter with the provided delta that can't be negative.
+
+
+
 ### Gauge
 
-To create `Gauge` call it as a construction with a `Path`:
+`Gauge` represents a value in a range.
 
 ```python
 gauge = rillrate.Gauge("my.gauge")
-gauge.set(1.23)
+gauge.inc(1.0)
+```
+
+#### Methods
+
+##### `set(value)`
+
+Set the value.
+
+
+
+### Pulse
+
+To create `Pulse` call it as a construction with a `Path`:
+
+```python
+pulse = rillrate.Pulse("my.pulse")
+pulse.set(1.23)
 ```
 
 #### Methods
@@ -61,20 +99,41 @@ Decrements an internal value with the provided delta.
 
 Set an internal value.
 
-### Counter
 
-To create `Counter` call it as a construction with a `Path`:
+
+### Histogram
+
+`Histogram` collects values in buckets.
 
 ```python
-counter = rillrate.Counter("my.counter")
-counter.inc(1.0)
+histogram = rillrate.Histogram("my.histogram", [10, 20, 50, 100, 500])
+histogram.add(128.0)
 ```
 
 #### Methods
 
-##### `inc(delta)`
+##### `add(value)`
 
-Increments an internal counter with the provided delta that can't be negative.
+Add the value to the corresponding bucket.
+
+
+
+### Dict
+
+`Dict` represents of the table of key-pair values.
+
+```python
+dict = rillrate.Dict("my.dict", [10, 20, 50, 100, 500])
+dict.add(128.0)
+```
+
+#### Methods
+
+##### `set(key, value)`
+
+Assing a value to the provided key.
+
+
 
 ### Logger
 
@@ -90,6 +149,8 @@ logger.log("message to log")
 ##### `log(message)`
 
 Writes a message and send it to subscribers.
+
+
 
 ## Expansions
 

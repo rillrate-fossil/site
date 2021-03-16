@@ -80,6 +80,7 @@ subscribers. In other words reactive tracers needs less resources, because
 they are inactive till they activated by subscribers.
 
 
+
 ### Tracer
 
 Every `Tracer` has methods that you can use to explore some conditions and properties.
@@ -94,6 +95,7 @@ returns `true`.
 ##### `path(&self) -> &Path`
 
 Return a reference to a parsed `Path` of the `Tracer`.
+
 
 
 ### Counter
@@ -124,6 +126,7 @@ Increments an internal counter with the provided delta that can't be negative.
 | Panel with number | `COUNTER`  | as `f64` |
 
 
+
 ### Gauge
 
 `Gauge` is a value in a range.
@@ -150,6 +153,7 @@ Set the gauge value in range.
 | RillRate View     | Prometheus | Graphite |
 | ----------------- | ---------- | -------- |
 | Panel with gauge  | `GAUGE`    | as `f64` |
+
 
 
 ### Pulse
@@ -193,6 +197,7 @@ Set an internal value.
 | Real-time chart   | `GAUGE`    | as `f64` |
 
 
+
 ### Histogram
 
 `Histogram` counts values in buckets.
@@ -221,6 +226,7 @@ Adds the value to the histogram.
 | Panel with histogram | `HISTOGRAM` | N/A      |
 
 
+
 ### Dict
 
 `Dict` is a table of key-value pairs.
@@ -247,6 +253,7 @@ Set the value in the dict.
 | RillRate View   | Prometheus | Graphite |
 | ----------------| ---------- | -------- |
 | Table with dict | N/A        | N/A      |
+
 
 
 ### Logger
@@ -283,6 +290,8 @@ Writes a message and send it to subscribers.
 | RillRate View     | Prometheus | Graphite |
 | ----------------- | ---------- | -------- |
 | Row in log-stream | N/A        | N/A      |
+
+
 
 ## Expansions
 
