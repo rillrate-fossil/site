@@ -79,6 +79,7 @@ but forward updates to a worker and server only when the stream of the provider 
 subscribers. In other words reactive tracers needs less resources, because
 they are inactive till they activated by subscribers.
 
+
 ### Tracer
 
 Every `Tracer` has methods that you can use to explore some conditions and properties.
@@ -94,17 +95,66 @@ returns `true`.
 
 Return a reference to a parsed `Path` of the `Tracer`.
 
+
+### Counter
+
+`Counter` just adds all incoming values and represents cumulative sum of them.
+
+```rust
+use rillrate::Counter;
+
+let counter = Counter::new("my.counter");
+counter.inc(1.0);
+```
+
+#### Methods
+
+##### `inc(&self, delta: f64)`
+
+Increments an internal counter with the provided delta that can't be negative.
+
+#### Rendering
+
+| RillRate View     | Prometheus | Graphite |
+| ----------------- | ---------- | -------- |
+| Panel with number | `COUNTER`  | as `f64` |
+
+
 ### Gauge
 
-`Gauge` is a simple metric that represents a value that can be changes in any direction.
+`Gauge` is a value in a range.
 
 ```rust
 use rillrate::Gauge;
 
-let gauge = Gauge::new("my.gauge");
-gauge.inc(1.0);
-gauge.dec(1.0);
-gauge.set(1.23);
+let gauge = Gauge::new("my.gauge", 0.0, 100.0);
+gauge.set(55.0);
+```
+
+#### Methods
+
+##### `set(&self, value: f64)`
+
+Set the gauge value in range.
+
+#### Rendering
+
+| RillRate View     | Prometheus | Graphite |
+| ----------------- | ---------- | -------- |
+| Panel with gauge  | `GAUGE`    | as `f64` |
+
+
+### Pulse
+
+`Pulse` is a simple metric that represents a value that can be changes in any direction.
+
+```rust
+use rillrate::Pulse;
+
+let pulse = Pulse::new("my.pulse");
+pulse.inc(1.0);
+pulse.dec(1.0);
+pulse.set(1.23);
 ```
 
 As you can see it doesn't require to be mutable with `mut`, because tracers are thread-safe
@@ -130,28 +180,54 @@ Set an internal value.
 | ----------------- | ---------- | -------- |
 | Real-time chart   | `GAUGE`    | as `f64` |
 
-### Counter
 
-`Counter` just adds all incoming values and represents cumulative sum of them.
+### Histogram
+
+`Histogram` counts values in buckets.
 
 ```rust
-use rillrate::Counter;
+use rillrate::Histogram;
 
-let counter = Counter::new("my.counter");
-counter.inc(1.0);
+let histogram = Histogram::new("my.histogram", &[10.0, 50.0, 100.0, 250.0]);
+histogram.add(125.0);
 ```
 
 #### Methods
 
-##### `inc(&self, delta: f64)`
+##### `add(&self, value: f64)`
 
-Increments an internal counter with the provided delta that can't be negative.
+Adds the value to the histogram.
 
 #### Rendering
 
-| RillRate View     | Prometheus | Graphite |
-| ----------------- | ---------- | -------- |
-| Panel with number | `COUNTER`  | as `f64` |
+| RillRate View        | Prometheus  | Graphite |
+| -------------------- | ----------- | -------- |
+| Panel with histogram | `HISTOGRAM` | N/A      |
+
+
+### Dict
+
+`Dict` is a table of key-value pairs.
+
+```rust
+use rillrate::Dict;
+
+let dict = Dict::new("my.dict");
+dict.add(125.0);
+```
+
+#### Methods
+
+##### `set(&self, key: impl ToString, value: impl ToString)`
+
+Set the value in the dict.
+
+#### Rendering
+
+| RillRate View   | Prometheus | Graphite |
+| ----------------| ---------- | -------- |
+| Table with dict | N/A        | N/A      |
+
 
 ### Logger
 
