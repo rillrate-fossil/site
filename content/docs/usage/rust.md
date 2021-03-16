@@ -158,7 +158,7 @@ Set the gauge value in range.
 
 ### Pulse
 
-`Pulse` is a simple metric that represents a value that can be changes in any direction.
+`Pulse` is a frame of values that rendered as a moving chart.
 
 ```rust
 use rillrate::Pulse;
