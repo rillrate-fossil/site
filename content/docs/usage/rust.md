@@ -103,11 +103,15 @@ Return a reference to a parsed `Path` of the `Tracer`.
 ```rust
 use rillrate::Counter;
 
-let counter = Counter::new("my.counter");
+let counter = Counter::create("my.counter")?;
 counter.inc(1.0);
 ```
 
 #### Methods
+
+##### `create(path: &str) -> Result<Self, Error>`
+
+Creates a new instance of `Counter` with the provided `path`.
 
 ##### `inc(&self, delta: f64)`
 
@@ -127,11 +131,15 @@ Increments an internal counter with the provided delta that can't be negative.
 ```rust
 use rillrate::Gauge;
 
-let gauge = Gauge::new("my.gauge", 0.0, 100.0);
+let gauge = Gauge::create("my.gauge", 0.0, 100.0)?;
 gauge.set(55.0);
 ```
 
 #### Methods
+
+##### `create(path: &str, min: f64, max: f64) -> Result<Self, Error>`
+
+Creates a new instance of `Gauge` with the provided `path` and the range between `min` and `max` values.
 
 ##### `set(&self, value: f64)`
 
@@ -151,7 +159,7 @@ Set the gauge value in range.
 ```rust
 use rillrate::Pulse;
 
-let pulse = Pulse::new("my.pulse");
+let pulse = Pulse::create("my.pulse")?;
 pulse.inc(1.0);
 pulse.dec(1.0);
 pulse.set(1.23);
@@ -161,6 +169,10 @@ As you can see it doesn't require to be mutable with `mut`, because tracers are 
 and designed to be used anywhere in your code without limitations.
 
 #### Methods
+
+##### `create(path: &str) -> Result<Self, Error>`
+
+Creates a new instance of `Pulse` with the provided `path`.
 
 ##### `inc(&self, delta: f64)`
 
@@ -188,11 +200,15 @@ Set an internal value.
 ```rust
 use rillrate::Histogram;
 
-let histogram = Histogram::new("my.histogram", &[10.0, 50.0, 100.0, 250.0]);
+let histogram = Histogram::create("my.histogram", &[10.0, 50.0, 100.0, 250.0])?;
 histogram.add(125.0);
 ```
 
 #### Methods
+
+##### `create(path: &str, levels: &[f64]) -> Result<Self, Error>`
+
+Creates a new instance of `Histogram` with the provided `path` and `levels` (buckets).
 
 ##### `add(&self, value: f64)`
 
@@ -212,11 +228,15 @@ Adds the value to the histogram.
 ```rust
 use rillrate::Dict;
 
-let dict = Dict::new("my.dict");
+let dict = Dict::create("my.dict")?;
 dict.add(125.0);
 ```
 
 #### Methods
+
+##### `create(path: &str) -> Result<Self, Error>`
+
+Creates a new instance of `Dict` with the provided `path`.
 
 ##### `set(&self, key: impl ToString, value: impl ToString)`
 
@@ -244,11 +264,15 @@ The beniefit of this approach is that you can activate any level absolutely sepa
 ```rust
 use rillrate::Logger;
 
-let logger = Logger::new("my.logger");
+let logger = Logger::create("my.logger")?;
 logger.log("my text message");
 ```
 
 #### Methods
+
+##### `create(path: &str) -> Result<Self, Error>`
+
+Creates a new instance of `Logger` with the provided `path`.
 
 ##### `log(&self, message: impl ToString)`
 
