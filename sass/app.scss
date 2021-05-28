@@ -24,3 +24,25 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/sidebar";
+
+
+
+//#wrap { width: 600px; height: 390px; padding: 0; overflow: hidden; }
+
+/*
+#frame { width: 1200px; height: 520px; border: 1px solid black; }
+
+#frame {
+    -ms-zoom: 0.5;
+    -moz-transform: scale(0.5);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.5);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+}
+*/
+
+.iframe-wrap { width: 700px; height: 420px; padding: 0; overflow: hidden; }
+.iframe-frame { width: 1000px; height: 600px; border: 1px solid black; }
+.iframe-frame { zoom: 0.70; -moz-transform: scale(0.70); -moz-transform-origin: 0 0; }
