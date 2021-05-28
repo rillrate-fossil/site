@@ -9,13 +9,27 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="my-1">RillRate</h2>
                 </div>
-                <div class="col-lg-9 col-xl-8 text-center">
+                <div class="col-lg-9 col-xl-8 text-center d-flex flex-column align-items-center">
                     <p class="fs-3 fst-normal mt-2">Real-time monitoring for Microservices.</p>
                     <!--<p class="lead">Dynamic tracing system that tends to be real-time.</p>-->
                     <div class="iframe-wrap mt-5">
-                        <iframe class="iframe-frame" src="https://play.rillrate.com/ui/"></iframe>
+                        <div id="iframe-turn" class="iframe-turn d-flex flex-column align-items-center">
+                            <!--<p class="small text-white">Click here to turn on the demo</p>-->
+                            <p class="text-white small fst-italic">Try the <b>real</b> dashboard demo in action!</p>
+                            <script>
+                            function turn_demo_on() {
+                                var turn = document.getElementById("iframe-turn");
+                                turn.style.visibility = "hidden";
+
+                                var frame = document.getElementById("iframe-frame");
+                                frame.style.visibility = "visible";
+                                frame.setAttribute("src", "https://play.rillrate.com/ui/");
+                            }
+                            </script>
+                            <button class="iframe-btn btn" onclick="turn_demo_on()">Turn It On</button>
+                        </div>
+                        <iframe id="iframe-frame" class="iframe-frame"></iframe>
                     </div>
-                    <p class="text-muted"><small><em>Click on the laptop to try the <b>real</b> dashboard in action!</em></small></p>
 
                     <a class="btn btn-primary btn-lg px-4 my-4" href="/docs/basics/intro/" role="button">Get Your Own!</a>
                     <!--<p class="meta">Open-source MIT Licensed. <a href="https://github.com/rillrate/rillrate">GitHub v0.1.5</a></p>-->

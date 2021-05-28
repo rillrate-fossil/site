@@ -43,6 +43,54 @@
 }
 */
 
-.iframe-wrap { width: 700px; height: 420px; padding: 0; overflow: hidden; }
-.iframe-frame { width: 1000px; height: 600px; border: 1px solid black; }
+//.iframe-wrap { width: 700px; height: 420px; padding: 0; overflow: hidden; }
+.iframe-wrap { width: 900px; height: 800px; padding: 0; overflow: hidden; }
+.iframe-wrap { background-image: url("/images/kompukter.png"); position: relative; }
+.iframe-turn { left: 35%; top: 25%; position: absolute; }
+
+//.iframe-frame { position: absolute; left: 20px; top: 20px; }
+//.iframe-frame { width: 1000px; height: 600px; border: 1px solid black; }
 .iframe-frame { zoom: 0.70; -moz-transform: scale(0.70); -moz-transform-origin: 0 0; }
+
+.iframe-frame {
+    position: absolute;
+    left: 34px;
+    top: 26px;
+}
+.iframe-frame {
+    width: 1189px;
+    height: 669px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+#iframe-turn { visibility: visible; z-index: 200; }
+#iframe-frame { visibility: hidden; z-index: 100; }
+
+.iframe-btn {
+  color: white;
+  background-color: #5d2f86;
+  border-color: #8700ff;
+  animation-name: pulse-color;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+
+.iframe-btn:hover {
+  color: white;
+  background-color: #5d2f86;
+  border-color: #8700ff;
+  animation-name: none;
+}
+
+@keyframes pulse-color {
+  0% {
+    background-color: #5d2f86;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: #5d2f86;
+  }
+}
