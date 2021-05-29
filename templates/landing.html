@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class="wrap container" role="document">
+<div id="home" class="wrap container" role="document">
     <div class="content">
 
         <section class="section container-fluid mt-n3 pb-3">
@@ -17,22 +17,21 @@
                             <!--<p class="small text-white">Click here to turn on the demo</p>-->
                             <p class="text-white small fst-italic">Try the <b>real</b> dashboard demo in action!</p>
                             <script>
-                            function turn_demo_on() {
-                                var turn = document.getElementById("iframe-turn");
-                                turn.style.visibility = "hidden";
+                                function turn_demo_on() {
+                                    var turn = document.getElementById("iframe-turn");
+                                    turn.style.visibility = "hidden";
 
-                                var frame = document.getElementById("iframe-frame");
-                                frame.style.visibility = "visible";
-                                frame.setAttribute("src", "https://play.rillrate.com/ui/");
-                            }
+                                    var frame = document.getElementById("iframe-frame");
+                                    frame.style.visibility = "visible";
+                                    frame.setAttribute("src", "https://play.rillrate.com/ui/");
+                                }
                             </script>
                             <button class="iframe-btn btn" onclick="turn_demo_on()">Turn It On</button>
                         </div>
                         <iframe id="iframe-frame" class="iframe-frame"></iframe>
                     </div>
 
-                    <a class="btn btn-primary btn-lg px-4 my-4" href="/docs/basics/intro/" role="button">Get Your Own!</a>
-                    <!--<p class="meta">Open-source MIT Licensed. <a href="https://github.com/rillrate/rillrate">GitHub v0.1.5</a></p>-->
+                    <a class="btn btn-primary btn-lg px-4 my-4" href="/docs/basics/intro/" role="button">Start for free</a>
                 </div>
             </div>
         </section>
@@ -40,8 +39,9 @@
     </div>
 </div>
 
-<section class="section section-sm">
+<section id="features" class="section bg-light">
     <div class="container">
+        <h2 class="border-bottom text-muted text-center">Features</h2>
         <div class="row justify-content-center text-center">
             <div class="col-lg-5">
                 <h2 class="h4">Low-latency</h2>
@@ -50,33 +50,89 @@
             </div>
             <div class="col-lg-5">
                 <h2 class="h4">Zero-configuration</h2>
-                <p>Your app will be automatically configured to provide only requested streams of metrics. Just point it to the server.</p>
+                <p>Your app will be automatically configured to provide only requested streams of metrics and only requested streams will be transferred.</p>
             </div>
             <div class="col-lg-5">
-                <h2 class="h4">Live Dashboard</h2>
-                <p>The library provides an embedded dashboard that can be used instantly as soon as you started your application.</p>
+                <h2 class="h4">Multiple Platforms</h2>
+                <p>We offer the library for many popular programming languages like: <a href="https://crates.io/crates/rillrate">Rust</a>, <a href="https://pypi.org/project/rillrate/">Python</a>, <a href="https://www.npmjs.com/package/@rillrate/rillrate">Node.js</a>. And other languages will be supported soon.</p>
             </div>
         </div>
-        <div class="row justify-content-center text-center">
+        <!--
+            <div class="row justify-content-center text-center">
             <div class="col-lg-5">
-                <h2 class="h4">Multiple Languages</h2>
-                <p>We offer the library for many popular programming languages like: <a href="https://crates.io/crates/rillrate">Rust</a>, <a href="https://pypi.org/project/rillrate/">Python</a>, <a href="https://www.npmjs.com/package/@rillrate/rillrate">Node.js</a>. And many other languages will be supported soon.</p>
+            <h2 class="h4">Live Dashboard</h2>
+            <p>The library provides an embedded dashboard that can be used instantly as soon as you started your application.</p>
             </div>
             <div class="col-lg-5">
-                <h2 class="h4">Exporters</h2>
-                <p>Easily transform your metrics into <a href="">Prometheus</a> or <a href="">Graphite</a> formats. Focus on metrics in your app, but not on exporting formats.</p>
+            <h2 class="h4">Exporters</h2>
+            <p>Easily transform your metrics into <a href="">Prometheus</a> or <a href="">Graphite</a> formats. Focus on metrics in your app, but not on exporting formats.</p>
             </div>
             <div class="col-lg-5">
-                <h2 class="h4">Teleport Agent</h2>
-                <p>Get metrics and logs from existing apps with the simplicity of a single command line. Or connect it to Databases, Containers or other middleware.</p>
+            <h2 class="h4">Teleport Agent</h2>
+            <p>Get metrics and logs from existing apps with the simplicity of a single command line. Or connect it to Databases, Containers or other middleware.</p>
+            </div>
+            </div>
+        -->
+    </div>
+</section>
+
+<section id="pricing" class="section">
+    <div class="container">
+        <h2 class="border-bottom text-muted text-center">Pricing</h2>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Free</h4>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">Free<small class="text-muted fw-light">/mo</small></h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>10 users included</li>
+                            <li>2 GB of storage</li>
+                            <li>Email support</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-white bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">Premium</h4>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">$24<small class="text-muted fw-light">/mo</small></h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>20 users included</li>
+                            <li>10 GB of storage</li>
+                            <li>Priority email support</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Ultimate</h4>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title pricing-card-title">Custom<small class="text-muted fw-light">/mo</small></h2>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>30 users included</li>
+                            <li>15 GB of storage</li>
+                            <li>Phone and email support</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Contact us</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section section-sm container-fluid">
-    <div class="row justify-content-center text-center">
-        <div class="col-lg-9"></div>
-    </div>
-</section>
 {% endblock %}
