@@ -8,4 +8,4 @@ weight = 2
 
 Harju maakond, Tallinn, Kesklinna linnaosa, Tornimäe tn 7-26, 10145
 
-<support@rillrate.com>
+**Support**: <https://rillrate.teamwork.com/support/>
