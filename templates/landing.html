@@ -11,10 +11,11 @@
                 </div>
                 <div class="col-lg-9 col-xl-8 text-center d-flex flex-column align-items-center">
                     <p class="fs-3 fst-normal mt-2">Real-time monitoring for Microservices.</p>
+                    <img src="/images/dashboard.png" width="500px" />
                     <!--<p class="lead">Dynamic tracing system that tends to be real-time.</p>-->
+                    <!--
                     <div class="iframe-wrap mt-5">
                         <div id="iframe-turn" class="iframe-turn d-flex flex-column align-items-center">
-                            <!--<p class="small text-white">Click here to turn on the demo</p>-->
                             <p class="text-white small fst-italic">Try the <b>real</b> dashboard demo in action!</p>
                             <script>
                                 function turn_demo_on() {
@@ -30,6 +31,7 @@
                         </div>
                         <iframe id="iframe-frame" class="iframe-frame"></iframe>
                     </div>
+                    -->
 
                     <a class="btn btn-primary btn-lg px-4 my-4" href="http://account.rillrate.com/" role="button">Start for free</a>
                 </div>
@@ -113,7 +115,7 @@
                             <li>Single user</li>
                             <li>Free access</li>
                         </ul>
-                        <a class="w-100 btn btn-lg btn-outline-primary" href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="rillrate-vision-free-plan-usd-monthly" data-cb-item-0-quantity="1" >Get Free</a>
+                        <a class="w-100 btn btn-lg btn-outline-primary" href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="rillrate-vision-nomad-plan-usd-monthly" data-cb-item-0-quantity="1" >Get Free</a>
                     </div>
                 </div>
             </div>
@@ -134,7 +136,7 @@
                             <li>Single user</li>
                             <li>Free access</li>
                         </ul>
-                        <a class="w-100 btn btn-lg btn-outline-primary" href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="rillrate-vision-premium-plan-usd-monthly" data-cb-item-0-quantity="1" >Buy</a>
+                        <a class="w-100 btn btn-lg btn-outline-primary" href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="rillrate-vision-developer-plan-usd-monthly" data-cb-item-0-quantity="1" >Buy</a>
                     </div>
                 </div>
             </div>
@@ -171,9 +173,9 @@
         <div class="row justify-content-center">
             <article class="text-start">
                 <p>To start the <b>RillRate Server</b> you can use ready-to-use <b>Docker</b> container:</p>
-                <pre>$ docker run -d -p 1636:1636 -p 9090:9090 --restart always --name rillrate rillrate/vision:latest</pre>
+                <pre>$ docker run -d -p 1636:1636 -p 6361:6361 --restart always --name rillrate rillrate/vision:latest</pre>
                 <p>When it started open the following link in your browser
-                <a href="http://localhost:9090/" target="_blank">localhost:9090</a>
+                <a href="http://localhost:6361/" target="_blank">localhost:6361</a>
                 to get access to the dashboard.</p>
             </article>
         </div>
