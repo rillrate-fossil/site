@@ -1,0 +1,96 @@
+/** Import Bootstrap functions */
+@import "vendor/bootstrap/scss/functions";
+
+/** Import theme variables */
+@import "common/variables";
+
+/** Import Bootstrap */
+@import "vendor/bootstrap/scss/bootstrap";
+
+/** Import theme styles */
+@import "common/fonts";
+@import "common/global";
+@import "common/dark";
+@import "components/alerts";
+@import "components/buttons";
+@import "components/code";
+// @import "components/syntax";
+@import "components/comments";
+@import "components/forms";
+@import "components/images";
+@import "components/search";
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/sidebar";
+
+
+
+//#wrap { width: 600px; height: 390px; padding: 0; overflow: hidden; }
+
+/*
+#frame { width: 1200px; height: 520px; border: 1px solid black; }
+
+#frame {
+    -ms-zoom: 0.5;
+    -moz-transform: scale(0.5);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.5);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+}
+*/
+
+//.iframe-wrap { width: 700px; height: 420px; padding: 0; overflow: hidden; }
+.iframe-wrap { width: 900px; height: 800px; padding: 0; overflow: hidden; }
+.iframe-wrap { background-image: url("/images/kompukter.png"); position: relative; }
+.iframe-turn { left: 35%; top: 25%; position: absolute; }
+
+//.iframe-frame { position: absolute; left: 20px; top: 20px; }
+//.iframe-frame { width: 1000px; height: 600px; border: 1px solid black; }
+//.iframe-frame { zoom: 0.70; -moz-transform: scale(0.70); -moz-transform-origin: 0 0; }
+
+.iframe-frame {
+    position: absolute;
+    left: 34px;
+    top: 26px;
+}
+.iframe-frame {
+    width: 833px;
+    height: 469px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+#iframe-turn { visibility: visible; z-index: 200; }
+#iframe-frame { visibility: hidden; z-index: 100; }
+
+.iframe-btn {
+  color: white;
+  background-color: #5d2f86;
+  border-color: #8700ff;
+  animation-name: pulse-color;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+
+.iframe-btn:hover {
+  color: white;
+  background-color: #5d2f86;
+  border-color: #8700ff;
+  animation-name: none;
+}
+
+@keyframes pulse-color {
+  0% {
+    background-color: #5d2f86;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: #5d2f86;
+  }
+}
