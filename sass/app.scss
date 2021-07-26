@@ -1,3 +1,5 @@
-@import "vendor/bootstrap/scss/functions";
 @import "variables";
 @import "vendor/bootstrap/scss/bootstrap";
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }

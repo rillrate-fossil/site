@@ -1,5 +1,13 @@
 $primary:       #EE5055;
 $secondary:     #F7F6F6;
+$success:       #4211CC;
+
+/*
+$custom-colors: (
+  "premium": $premium,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+*/
 
 $font-family-sans-serif:      "Jost", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-monospace:       sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
@@ -15,7 +23,3 @@ $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-font-weight:        700 !default;
-
-
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.1); }
