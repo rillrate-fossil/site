@@ -2,8 +2,13 @@
 <html lang="en-US">
 
   {% set mantra = "Dynamic UI for bots, microservices, and IoT." %}
+  {% set sponsor = "https://github.com/sponsors/rillrate" %}
 
-  {% block head %}{% include "head.html" %}{% endblock %}
+
+  <head>
+      {% include "head.html" %}
+      {% block head %}{% endblock %}
+  </head>
 
   {% if page is defined -%}
     {% set class = "docs single" -%}
