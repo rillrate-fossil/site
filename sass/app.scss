@@ -3,3 +3,19 @@
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
+
+
+.book-border {
+    border: 6px solid #4b515a;
+}
+
+.book-label {
+    background: #ffd600;
+}
+
+.book-btn {
+    background: #ffd600;
+    &:hover {
+        background: #ffeb81;
+    }
+}
