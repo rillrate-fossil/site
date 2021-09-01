@@ -8,8 +8,12 @@
                 <div class="nav">
                     <a class="navbar-brand fw-bold me-5" href="/">RillRate</a>
                     <a class="nav-link link-dark" href="#home">Home</a>
-                    <a class="nav-link link-dark" href="#cases">Cases</a>
-                    <!--<a class="nav-link link-primary" href="#pricing">Live</a>-->
+                    <a class="nav-link link-dark" href="#features">Features</a>
+                    <a class="nav-link link-primary" href="#pricing">Live</a>
+                    <!--
+                    <a class="nav-link link-dark" href="#pricing">Pricing</a>
+                    <a class="nav-link link-success" href="#pricing">Hub</a>
+                    -->
                 </div>
                 <div class="nav">
                     <a class="nav-link link-dark" href="https://github.com/rillrate/rillrate" target="_blank">
@@ -26,83 +30,167 @@
 <div id="home"><!-- It's separate div to make go to home links from the footer works. --></div>
 <div class="container-fluid py-5 bg-white">
     <div class="container text-center fs-5">
+        <h4>RillRate <span class="text-primary">Live</span></h4>
         <p class="mt-3">
-            <b>The modern company is a distributed app.</b>
+            <span class="">{{ mantra }}</span>
+            <br>
+            <span class="fs-6">Fast, embedded, with auto-layout and controls.</span>
         </p>
-        <p class="mt-3">
-            You need a <b>User Interface</b> to monitor and control it.
-        </p>
-        <div class="d-flex flex-column align-items-center">
-            <img style="max-width: 70%;" src="/images/apps-net.svg" />
-            <img style="max-width: 20%;" src="/images/dashboard.png" />
+        <img class="mt-3" src="/images/bots-and-rillrate.svg" />
+    </div>
+</div>
+<div class="container-fluid py-5 bg-light">
+    <div class="container text-center fs-4">
+        <p><b>RillRate</b> embeds a live custom <a class="link-dark" href="#dashboard">dashboard</a> to your bots<br>
+        to monitor and tweak them directly in <b><i>real-time</i></b>.</p>
+    </div>
+</div>
+<div class="container-fluid py-5 bg-white" id="dashboard">
+    <div class="container text-center">
+        <h5>How it looks like?</h5>
+        <div class="d-flex flex-row justify-content-center align-items-end mt-5 pe-5">
+            <img src="/images/happy-engineer.svg" />
+            <img src="/images/dashboard.png" width="550px" class="shadow-lg grow" style="z-index: 1000;" />
+            <img src="/images/happy-bot.svg" style="margin-left: -1rem; margin-bottom: 3rem;" />
+        </div>
+        <a class="btn btn-primary text-white px-3 my-5" href="#pricing">Start for free</a>
+    </div>
+</div>
+<div class="container-fluid py-5 bg-light">
+    <div class="container text-center">
+        <h5>Reasons to try it:</h5>
+        <div class="d-flex flex-column mt-4">
+            <div>
+                <p class="fw-bold text-uppercase my-4">Monitoring</p>
+                <p>Monitor the state or the progress of your bots in real-time.</p>
+            </div>
+            <div>
+                <p class="fw-bold text-uppercase my-4">Live configuration &amp; control</p>
+                <p>Change parameters of bots on-the-fly without restarting it.</p>
+            </div>
+            <div>
+                <p class="fw-bold text-uppercase my-4"><span class="text-primary">Hot</span> debugging &amp; diagnostics</p>
+                <p>Not necessary to collect everything for analysis. Get detailed data only when required.</p>
+            </div>
+            <div>
+                <p class="fw-bold text-uppercase my-4">Interactive testing</p>
+                <p>Add controls to your bots and simulate unique behavior.</p>
+            </div>
+            <div>
+                <p class="fw-bold text-uppercase my-4">On-demand features</p>
+                <p>Activate special or expensive features of your bots only when you need them.</p>
+            </div>
         </div>
     </div>
 </div>
-
-
-<div class="container-fluid py-5 bg-light">
-    <div class="container text-center fs-5">
-        <p><b>RillRate</b> offers a way to join all your <br> IT-components into a single user interface.</p>
+<div class="container-fluid py-5 bg-white" id="features">
+    <div class="container text-center">
+        <h5>What features the dashboard has?</h5>
+        <div class="d-flex flex-row justify-content-between my-5">
+            <img class="grow" src="/images/features-charts.svg" />
+            <img class="grow" src="/images/features-tables.svg" />
+            <img class="grow" src="/images/features-controls.svg" />
+            <img class="grow" src="/images/features-more.svg" />
+        </div>
     </div>
 </div>
-
+<div class="container-fluid py-5 bg-light">
+    <div class="container text-center fs-5">
+        <p><b>Supported languages:</b> Rust, Python, Node.js</p>
+        <p class="mt-5"><b>Soon:</b> Go, Java, C#, C, C++, R. <a class="link link-primary text-decoration-none" href="https://github.com/rillrate/rillrate/discussions">Need more?</a></p>
+        <p class="mt-5">
+            + compatible with <b>Docker</b> and <b>Kubernetes</b>!
+            Just open <a class="link-dark" href="http://localhost:6361" target="_blank">6361</a> port.
+        </p>
+    </div>
+</div>
+<div class="container-fluid py-5 bg-white" id="pricing">
+    <div class="container text-center">
+        <h5>Pricing</h5>
+        <div class="container px-5">
+            <div class="row mt-4 mx-5">
+                <div class="col-4 px-3 offset-4">
+                    <div class="bg-secondary p-3 rounded-3">
+                        <h4 class="mx-3 p-3">Live</h4>
+                        <div class="bg-primary mx-3" style="height: 0.4rem;"> </div>
+                        <p class="m-3 text-primary fw-bold">Free</p>
+                        <p class="px-3">
+                        Embedded dashboard.
+                        <br>
+                        Single app.
+                        <br>
+                        Simple.
+                        </p>
+                        <a class="btn btn-primary text-white px-3 my-3 w-75"
+                            href="https://github.com/rillrate/rillrate">
+                            <span class="me-1">Get free</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-5 bg-light">
+    <div class="container text-center fs-5 py-2">
+        <h5 class="mb-4">Try to use it with:</h5>
+        <div class="d-flex flex-row justify-content-around text-primary py-3">
+            <span>Chat Bots</span>
+            <span>Crawlers</span>
+            <span>Microservices</span>
+        </div>
+        <div class="d-flex flex-row justify-content-around text-primary py-3 px-5">
+            <span>Distributed Apps</span>
+            <span>Workers</span>
+        </div>
+        <div class="d-flex flex-row justify-content-around text-primary py-3">
+            <span>Scientific Apps</span>
+            <span>Trading Bots</span>
+            <span>IoT devices</span>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-5 bg-dark mt-5">
+    <div class="container text-center text-white">
+        <h5>Facts for GEEKS</h5>
+        <div class="row mt-4">
+            <div class="col-4">
+                <p class="fs-4">Low-latency</p>
+                <p class="px-5">We minimized the number of processing steps in the data delivery process and achieved very low-latency.</p>
+            </div>
+            <div class="col-4">
+                <p class="fs-4">Zero-configuration</p>
+                <p class="px-5">Configuration not needed. The dashboard works as soon as you started a bot.</p>
+            </div>
+            <div class="col-4">
+                <p class="fs-4">Oxidized</p>
+                <p class="px-5">
+                It’s written in Rust.
+                <br>
+                Completely.
+                <br>
+                From libs and server to UI.
+                <br>
+                Sweet!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container-fluid py-5 bg-white">
     <div class="container text-center fs-5">
-        <p>Turn your company into an app
-        <br> to monitor and control every detail of your business
-        <br> with a speed of up to 0.002 seconds 🚀
-        </p>
+        <h5>Still have not decided to try?</h5>
+        <p class="pt-5 my-5">Find out more from us: <a class="link link-primary" href="mailto:support@rillrate.com">support@rillrate.com</a></p>
+        <p class="pb-5 my-5">The source code of the engine you can get <a class="link link-primary" href="https://github.com/rillrate/rillrate">here</a>.</p>
     </div>
 </div>
 
-<div id="cases"><!-- It's separate div to make go to home links from the footer works. --></div>
-<div class="container-fluid py-5 bg-light">
-    <div class="container text-center fs-5">
-        <p>Download the <b>mini-book</b> about a new way to <br> watch and manage a company
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeitbrCzFsy6VMcz9r6RItF98333JallZF7skP4eLeLT5lZHA/viewform" target="_blank">here</a>.
-        </p>
-    </div>
-</div>
-<!--
-<div class="container-fluid py-5 bg-light">
-<div class="container-fluid py-5 bg-light">
-    <div class="container text-center fs-5 pb-5">
-        <p>Download a <b>mini-book</b> about your case:</p>
-    </div>
-    <div class="container text-center fs-5 pt-3">
-        <div class="input-group input-group-lg mb-3">
-            <span class="input-group-text book-border book-label">Case</span>
-            <select class="form-select book-border border-start-0">
-                <option selected>Choose the case you like:</option>
-                <option value="1">Trading</option>
-            </select>
-        </div>
-    </div>
-    <div class="container text-center fs-5 pt-3">
-        <div class="input-group input-group-lg mb-3">
-            <span class="input-group-text book-border book-label">Email</span>
-            <input type="email" class="form-control book-border border-start-0 border-end-0">
-            <button class="btn book-border book-btn" type="button">Get It!</button>
-        </div>
-    </div>
-</div>
-</div>
--->
-
-<div class="container-fluid mt-3 py-5 bg-white">
-    <div class="container text-center fs-5">
-        <h5>Do you have more questions?</h5>
-        <p class="pt-5 my-3">Find out more from us: <a class="link link-primary" href="mailto:support@rillrate.com">support@rillrate.com</a></p>
-        <p class="pb-5 my-3">If you are IT-specialist visit our <a class="link link-primary" href="https://github.com/rillrate/rillrate">GitHub</a>.</p>
-    </div>
-</div>
-
-
-<div class="container-fluid mt-5 py-3 bg-secondary">
+<div class="container-fluid py-3 bg-secondary">
     <div class="container text-muted">
         <footer class="d-flex flex-row justify-content-between">
             <div>© 2021 RillRate OÜ</div>
-            <!--<small>Build <a class="link link-dark" href="#dashboard">happy</a> bots only! ❤️</small>-->
+            <small>Build <a class="link link-dark" href="#dashboard">happy</a> bots only! ❤️</small>
             <div class="d-flex flex-row justify-content-between">
                 <a class="link link-dark me-3" href="/legal/terms">Terms</a>
                 <a class="link link-dark" href="/legal/privacy">Privacy</a>
