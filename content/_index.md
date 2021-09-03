@@ -1,5 +1,5 @@
 +++
 title = "Home"
-template = "landing.html"
+template = "landing-rtm.html"
 weight = 1
 +++
